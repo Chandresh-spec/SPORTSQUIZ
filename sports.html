@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Sports Day Quiz</title>
+  <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px #00e6e6, 0 0 20px #00b3b3, 0 0 30px #008080; }
+      50% { text-shadow: 0 0 20px #00ffff, 0 0 30px #00cccc, 0 0 40px #009999; }
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #e6f7ff, #cceeff);
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      animation: fadeIn 1.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    header h1 {
+      margin: 5px;
+      font-size: 36px;
+      font-weight: bold;
+      animation: glow 2s infinite;
+      text-align: center;
+    }
+    header h2 {
+      margin: 5px;
+      font-size: 24px;
+      font-style: italic;
+      text-align: center;
+    }
+    header h3 {
+      margin: 5px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .btn-container img {
+      display: none;
+      margin-top: 10px;
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #004080;
+      color: white;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0066cc;
+    }
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-weight: bold;
+      font-size: 18px;
+      animation: fadeIn 2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CANARA COLLEGE, MANGALORE</h1>
+    <h2>INTERNATIONAL SPORTS DAY CELEBRATION 2025</h2>
+    <h3>QUIZ COMPETITION ROUND – 2</h3>
+  </header>  <div class="container" id="buttonContainer"></div>  <footer>
+    <p>SPORTS AND GAME ASSOCIATION</p>
+  </footer>  <script>
+    const container = document.getElementById('buttonContainer');
+
+    const imageUrls = [
+      'images/photo1.jpg', 'images/photo2.jpg', 'images/photo3.jpg', 'images/photo4.jpg',
+      'images/photo5.jpg', 'images/photo6.jpg', 'images/photo7.jpg', 'images/photo8.jpg',
+      'images/photo9.jpg', 'images/photo10.jpg', 'images/photo11.jpg', 'images/photo12.jpg',
+      'images/photo13.jpg', 'images/photo14.jpg', 'images/photo15.jpg', 'images/photo16.jpg',
+      'images/photo17.jpg', 'images/photo18.jpg', 'images/photo19.jpg', 'images/photo20.jpg'
+    ];
+
+    for (let i = 1; i <= 20; i++) {
+      const btnDiv = document.createElement('div');
+      btnDiv.classList.add('btn-container');
+
+      const button = document.createElement('button');
+      button.textContent = `Button ${i}`;
+
+      const img = document.createElement('img');
+      img.src = imageUrls[i - 1];
+
+      button.addEventListener('click', () => {
+        img.style.display = img.style.display === 'block' ? 'none' : 'block';
+      });
+
+      btnDiv.appendChild(button);
+      btnDiv.appendChild(img);
+      container.appendChild(btnDiv);
+    }
+  </script></body>
+</html>
